@@ -75,8 +75,9 @@ contract("All", function (accounts) {
       console.log(e);
     });
   });
-  it("delist racer 456", async() => {
+  it("list and delist racer 456", async() => {
     Marketplace2_0.deployed().then((instance) => {
+      await instance.listRacer(456, 1);
       return instance.delistRacer(456);
     }).catch((e) => {
       console.log(e);
